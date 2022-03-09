@@ -1866,6 +1866,22 @@
          {
             "actAsMethod" : "GET",
             "name" : "GET"
+         },
+         {
+            "actAsMethod" : "POST",
+            "name": "PATCH"
+         },
+         {
+            "actAsMethod" : "GET",
+            "name": "OPTIONS"
+         },
+         {
+            "actAsMethod" : "POST",
+            "name": "DELETE"
+         },
+         {
+            "actAsMethod" : "POST",
+            "name": "PUT"
          }
       ],
       "name" : "baseline-policy",
