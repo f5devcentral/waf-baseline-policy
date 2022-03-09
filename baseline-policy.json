@@ -218,8 +218,8 @@
                "name" : "VIOL_RATING_NEED_EXAMINATION"
             },
             {
-               "alarm" : false,
-               "block" : false,
+               "alarm" : true,
+               "block" : true,
                "description" : "Violation Rating Threat detected",
                "name" : "VIOL_RATING_THREAT"
             },
@@ -279,7 +279,7 @@
                "name" : "VIOL_PARAMETER_LOCATION"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Mandatory parameter is missing",
                "name" : "VIOL_MANDATORY_PARAMETER"
@@ -291,7 +291,7 @@
                "name" : "VIOL_JSON_SCHEMA"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter array value",
                "name" : "VIOL_PARAMETER_ARRAY_VALUE"
@@ -450,14 +450,14 @@
                "name" : "VIOL_GWT_MALFORMED"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in header",
                "learn" : false,
                "name" : "VIOL_HEADER_METACHAR"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal request content type",
                "learn" : false,
@@ -540,21 +540,21 @@
                "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter value length",
                "learn" : false,
                "name" : "VIOL_PARAMETER_VALUE_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter data type",
                "learn" : false,
                "name" : "VIOL_PARAMETER_DATA_TYPE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter numeric value",
                "learn" : false,
@@ -568,14 +568,14 @@
                "name" : "VIOL_FLOW_MANDATORY_PARAMS"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Parameter value does not comply with regular expression",
                "learn" : false,
                "name" : "VIOL_PARAMETER_VALUE_REGEXP"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal file type",
                "learn" : false,
@@ -617,42 +617,42 @@
                "name" : "VIOL_FLOW_DISALLOWED_INPUT"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter",
                "learn" : false,
                "name" : "VIOL_PARAMETER"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal empty parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_EMPTY_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal POST data length",
                "learn" : false,
                "name" : "VIOL_POST_DATA_LENGTH"
             },
             {
-               "alarm" : false,
-               "block" : false,
+               "alarm" : true,
+               "block" : true,
                "description" : "Null in multi-part parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal header length",
                "learn" : false,
                "name" : "VIOL_HEADER_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "JSON data does not comply with format settings",
                "learn" : false,
@@ -680,7 +680,7 @@
                "name" : "VIOL_PARAMETER_NAME_METACHAR"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in value",
                "learn" : false,
@@ -707,28 +707,28 @@
                "name" : "VIOL_CSRF_EXPIRED"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal URL length",
                "learn" : false,
                "name" : "VIOL_URL_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal cookie length",
                "learn" : false,
                "name" : "VIOL_COOKIE_LENGTH"
             },
             {
-               "alarm" : false,
-               "block" : false,
+               "alarm" : true,
+               "block" : true,
                "description" : "Illegal request length",
                "learn" : false,
                "name" : "VIOL_REQUEST_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal query string length",
                "learn" : false,
@@ -775,7 +775,7 @@
                "name" : "VIOL_XML_SCHEMA"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "XML data does not comply with format settings",
                "learn" : false,
@@ -803,7 +803,7 @@
                "name" : "VIOL_VIRUS"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Request length exceeds defined buffer size",
                "learn" : true,
