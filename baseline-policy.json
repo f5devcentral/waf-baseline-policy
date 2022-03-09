@@ -79,12 +79,12 @@
          "http-protocols" : [
             {
                "description" : "Multiple host headers",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Check maximum number of parameters",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true,
                "maxParams" : 500
             },
@@ -105,7 +105,7 @@
             },
             {
                "description" : "High ASCII characters in headers",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -118,12 +118,12 @@
             },
             {
                "description" : "Content length should be a positive number",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Host header contains IP address",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -138,12 +138,12 @@
             },
             {
                "description" : "Bad multipart parameters parsing",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Bad multipart/form-data request parsing",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -153,12 +153,12 @@
             },
             {
                "description" : "Chunked request with Content-Length header",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Several Content-Length headers",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
