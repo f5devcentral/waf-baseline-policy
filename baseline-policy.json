@@ -36,43 +36,43 @@
          "evasions" : [
             {
                "description" : "Bad unescape",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Apache whitespace",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Bare byte decoding",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "IIS Unicode codepoints",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "IIS backslashes",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "%u decoding",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "Multiple decoding",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true,
                "maxDecodingPasses" : 3
             },
             {
                "description" : "Directory traversals",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             }
          ],
