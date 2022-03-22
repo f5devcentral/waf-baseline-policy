@@ -22,6 +22,12 @@
                "name" : "VIOL_BLACKLISTED_IP"
             },
             {
+               "name" : "VIOL_FILETYPE"
+            },
+            {
+               "name" : "VIOL_URL"
+            },
+            {
                "name" : "VIOL_GEOLOCATION"
             }
          ],
@@ -36,56 +42,56 @@
          "evasions" : [
             {
                "description" : "Bad unescape",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Apache whitespace",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Bare byte decoding",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             },
             {
                "description" : "IIS Unicode codepoints",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "IIS backslashes",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "%u decoding",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Multiple decoding",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true,
                "maxDecodingPasses" : 3
             },
             {
                "description" : "Directory traversals",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             }
          ],
          "http-protocols" : [
             {
                "description" : "Multiple host headers",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Check maximum number of parameters",
-               "enabled" : false,
-               "learn" : true,
+               "enabled" : true,
+               "learn" : false,
                "maxParams" : 500
             },
             {
@@ -95,17 +101,17 @@
             },
             {
                "description" : "Check maximum number of headers",
-               "enabled" : false,
-               "learn" : true,
-               "maxHeaders" : 20
+               "enabled" : true,
+               "learn" : false,
+               "maxHeaders" : 50
             },
             {
                "description" : "Unparsable request content",
-               "enabled" : true
+               "enabled" : false
             },
             {
                "description" : "High ASCII characters in headers",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -114,7 +120,7 @@
             },
             {
                "description" : "Bad HTTP version",
-               "enabled" : true
+               "enabled" : false
             },
             {
                "description" : "Content length should be a positive number",
@@ -129,7 +135,7 @@
             {
                "description" : "CRLF characters before request start",
                "enabled" : false,
-               "learn" : true
+               "learn" : false
             },
             {
                "description" : "No Host header in HTTP/1.1 request",
@@ -138,8 +144,8 @@
             },
             {
                "description" : "Bad multipart parameters parsing",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Bad multipart/form-data request parsing",
@@ -148,13 +154,13 @@
             },
             {
                "description" : "Body in GET or HEAD requests",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
                "description" : "Chunked request with Content-Length header",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "Several Content-Length headers",
@@ -163,8 +169,8 @@
             },
             {
                "description" : "Header name with no header value",
-               "enabled" : false,
-               "learn" : true
+               "enabled" : true,
+               "learn" : false
             },
             {
                "description" : "POST request with Content-Length: 0",
@@ -200,8 +206,12 @@
                "name" : "VIOL_SERVER_SIDE_HOST"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "description" : "Attack signature detected",
+               "name" : "VIOL_ATTACK_SIGNATURE"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
                "description" : "Disallowed file upload content detected in body",
                "name" : "VIOL_FILE_UPLOAD_IN_BODY"
             },
@@ -227,7 +237,7 @@
                "alarm" : true,
                "block" : true,
                "description" : "Illegal repeated header",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_HEADER_REPEATED"
             },
             {
@@ -241,6 +251,12 @@
                "block" : true,
                "description" : "Bad Actor Convicted",
                "name" : "VIOL_CONVICTION"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "description" : "Host name mismatch",
+               "name" : "VIOL_HOSTNAME_MISMATCH"
             },
             {
                "alarm" : false,
@@ -267,14 +283,14 @@
                "name" : "VIOL_BLOCKING_CONDITION"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Bad Actor Detected",
                "name" : "VIOL_MALICIOUS_DEVICE"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Illegal parameter location",
                "name" : "VIOL_PARAMETER_LOCATION"
             },
@@ -285,8 +301,8 @@
                "name" : "VIOL_MANDATORY_PARAMETER"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "JSON data does not comply with JSON schema",
                "name" : "VIOL_JSON_SCHEMA"
             },
@@ -303,18 +319,8 @@
                "name" : "VIOL_THREAT_CAMPAIGN"
             },
             {
-               "description" : "Attack signature detected",
-               "name" : "VIOL_ATTACK_SIGNATURE"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
-               "description" : "Host name mismatch",
-               "name" : "VIOL_HOSTNAME_MISMATCH"
-            },
-            {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "IP is blacklisted",
                "name" : "VIOL_BLACKLISTED_IP"
             },
@@ -384,7 +390,7 @@
                "alarm" : false,
                "block" : false,
                "description" : "Mask not found in client frame",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_WEBSOCKET_FRAME_MASKING"
             },
             {
@@ -402,17 +408,17 @@
                "name" : "VIOL_WEBSOCKET_BAD_REQUEST"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Illegal redirection attempt",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_REDIRECT"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Mandatory HTTP header is missing",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_MANDATORY_HEADER"
             },
             {
@@ -424,22 +430,22 @@
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "Illegal Base64 value",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_PARAMETER_VALUE_BASE64"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Access from malicious IP address",
                "name" : "VIOL_MALICIOUS_IP"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Disallowed file upload content detected",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_FILE_UPLOAD"
             },
             {
@@ -450,7 +456,7 @@
                "name" : "VIOL_GWT_MALFORMED"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in header",
                "learn" : false,
@@ -465,14 +471,14 @@
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "Illegal HTTP status in response",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_HTTP_RESPONSE_STATUS"
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "Modified ASM cookie",
                "learn" : true,
                "name" : "VIOL_ASM_COOKIE_MODIFIED"
@@ -506,8 +512,8 @@
                "name" : "VIOL_FLOW_ENTRY_POINT"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Access from disallowed User/Session/IP/Device ID",
                "name" : "VIOL_SESSION_AWARENESS"
             },
@@ -540,7 +546,7 @@
                "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal parameter value length",
                "learn" : false,
@@ -575,10 +581,10 @@
                "name" : "VIOL_PARAMETER_VALUE_REGEXP"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal file type",
-               "learn" : false,
+               "learn" : true,
                "name" : "VIOL_FILETYPE"
             },
             {
@@ -597,9 +603,9 @@
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "Illegal method",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_METHOD"
             },
             {
@@ -631,56 +637,56 @@
                "name" : "VIOL_PARAMETER_EMPTY_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal POST data length",
                "learn" : false,
                "name" : "VIOL_POST_DATA_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Null in multi-part parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal header length",
                "learn" : false,
                "name" : "VIOL_HEADER_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "JSON data does not comply with format settings",
                "learn" : false,
                "name" : "VIOL_JSON_FORMAT"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal repeated parameter name",
                "learn" : false,
                "name" : "VIOL_PARAMETER_REPEATED"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in URL",
                "learn" : false,
                "name" : "VIOL_URL_METACHAR"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in parameter name",
                "learn" : false,
                "name" : "VIOL_PARAMETER_NAME_METACHAR"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal meta character in value",
                "learn" : false,
@@ -694,69 +700,69 @@
                "name" : "VIOL_XML_SOAP_METHOD"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Brute Force: Maximum login attempts are exceeded",
                "name" : "VIOL_BRUTE_FORCE"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "CSRF authentication expired",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_CSRF_EXPIRED"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal URL length",
                "learn" : false,
                "name" : "VIOL_URL_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal cookie length",
                "learn" : false,
                "name" : "VIOL_COOKIE_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal request length",
                "learn" : false,
                "name" : "VIOL_REQUEST_LENGTH"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Illegal query string length",
                "learn" : false,
                "name" : "VIOL_QUERY_STRING_LENGTH"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Access from disallowed Geolocation",
                "learn" : true,
                "name" : "VIOL_GEOLOCATION"
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "HTTP protocol compliance failed",
                "learn" : true,
                "name" : "VIOL_HTTP_PROTOCOL"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Failed to convert character",
                "name" : "VIOL_ENCODING"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "CSRF attack detected",
                "name" : "VIOL_CSRF"
             },
@@ -775,7 +781,7 @@
                "name" : "VIOL_XML_SCHEMA"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "XML data does not comply with format settings",
                "learn" : false,
@@ -790,7 +796,7 @@
             },
             {
                "alarm" : true,
-               "block" : true,
+               "block" : false,
                "description" : "Evasion technique detected",
                "learn" : true,
                "name" : "VIOL_EVASION"
@@ -803,10 +809,10 @@
                "name" : "VIOL_VIRUS"
             },
             {
-               "alarm" : false,
+               "alarm" : true,
                "block" : false,
                "description" : "Request length exceeds defined buffer size",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_REQUEST_MAX_LENGTH"
             },
             {
@@ -824,10 +830,10 @@
                "name" : "VIOL_LOGIN_URL_EXPIRED"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Data Guard: Information leakage detected",
-               "learn" : true,
+               "learn" : false,
                "name" : "VIOL_DATA_GUARD"
             },
             {
@@ -841,68 +847,68 @@
          "web-services-securities" : [
             {
                "description" : "UnSigned Timestamp",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Timestamp expiration is too far in the future",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Expired Timestamp",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Invalid Timestamp",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Missing Timestamp",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Verification Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Signing Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Encryption Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Decryption Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Certificate Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Certificate Expired",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Malformed Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             },
             {
                "description" : "Internal Error",
-               "enabled" : true,
-               "learn" : true
+               "enabled" : false,
+               "learn" : false
             }
          ]
       },
@@ -951,526 +957,7 @@
             "sourceBasedProtectionDetectionPeriod" : 3600
          }
       ],
-      "caseInsensitive" : false,
-      "character-sets" : [
-         {
-            "characterSet" : [
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x0"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x2"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x3"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x4"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x5"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x6"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x7"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x8"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x9"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0xa"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0xb"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0xc"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0xd"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0xe"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0xf"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x10"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x11"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x12"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x13"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x14"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x15"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x16"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x17"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x18"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x19"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1a"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1b"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1c"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1d"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1e"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x1f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x20"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x21"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x22"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x23"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x24"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x25"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x26"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x27"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x28"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x29"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2e"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x2f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x30"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x31"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x32"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x33"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x34"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x35"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x36"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x37"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x38"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x39"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3e"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x3f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x40"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x41"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x42"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x43"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x44"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x45"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x46"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x47"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x48"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x49"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4e"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x4f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x50"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x51"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x52"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x53"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x54"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x55"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x56"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x57"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x58"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x59"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5e"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x5f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x60"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x61"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x62"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x63"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x64"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x65"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x66"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x67"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x68"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x69"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6e"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x6f"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x70"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x71"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x72"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x73"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x74"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x75"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x76"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x77"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x78"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x79"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x7a"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x7b"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x7c"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x7d"
-               },
-               {
-                  "isAllowed" : true,
-                  "metachar" : "0x7e"
-               },
-               {
-                  "isAllowed" : false,
-                  "metachar" : "0x7f"
-               }
-            ],
-            "characterSetType" : "plain-text-content"
-         }
-      ],
+      "caseInsensitive" : true,
       "cookie-settings" : {
          "maximumCookieHeaderLength" : "any"
       },
@@ -1483,7 +970,7 @@
             "isBase64" : false,
             "maskValueInLogs" : false,
             "name" : "*",
-            "performStaging" : true,
+            "performStaging" : false,
             "securedOverHttpsConnection" : false,
             "type" : "wildcard",
             "wildcardOrder" : 1
@@ -1494,7 +981,7 @@
       },
       "csrf-urls" : [
          {
-            "enforcementAction" : "verify-csrf-token",
+            "enforcementAction" : "verify-origin",
             "method" : "POST",
             "requiredParameters" : "ignore",
             "url" : "*",
@@ -1719,7 +1206,7 @@
             "wildcardOrder" : 1
          }
       ],
-      "fullPath" : "/Common/test",
+      "fullPath" : "/Common/baseline",
       "general" : {
          "allowedResponseCodes" : [
             400,
@@ -1729,9 +1216,9 @@
             417,
             503
          ],
-         "enableEventCorrelation" : true,
+         "enableEventCorrelation" : false,
          "enforcementReadinessPeriod" : 7,
-         "maskCreditCardNumbersInRequest" : true,
+         "maskCreditCardNumbersInRequest" : false,
          "pathParameterHandling" : "as-parameters",
          "triggerAsmIruleEvent" : "disabled",
          "trustXff" : false,
@@ -1757,12 +1244,12 @@
          {
             "attackSignaturesCheck" : true,
             "defenseAttributes" : {
-               "maximumTotalLengthOfGWTData" : 10000,
-               "maximumValueLength" : 100,
+               "maximumTotalLengthOfGWTData" : "any",
+               "maximumValueLength" : "any",
                "tolerateGWTParsingWarnings" : true
             },
             "description" : "Default GWT Profile",
-            "metacharElementCheck" : true,
+            "metacharElementCheck" : false,
             "name" : "Default"
          }
       ],
@@ -1837,16 +1324,18 @@
       },
       "json-profiles" : [
          {
+            "attackSignaturesCheck" : true,
             "defenseAttributes" : {
                "maximumArrayLength" : "any",
-               "maximumStructureDepth" : "any",
+               "maximumStructureDepth" : 25,
                "maximumTotalLengthOfJSONData" : "any",
                "maximumValueLength" : "any",
                "tolerateJSONParsingWarnings" : true
             },
             "description" : "Default JSON Profile",
-            "handleJsonValuesAsParameters" : true,
+            "handleJsonValuesAsParameters" : false,
             "hasValidationFiles" : false,
+            "metacharElementCheck" : true,
             "name" : "Default",
             "validationFiles" : []
          }
@@ -1857,7 +1346,15 @@
       "methods" : [
          {
             "actAsMethod" : "GET",
-            "name" : "HEAD"
+            "name" : "DELETE"
+         },
+         {
+            "actAsMethod" : "GET",
+            "name" : "PUT"
+         },
+         {
+            "actAsMethod" : "POST",
+            "name" : "PATCH"
          },
          {
             "actAsMethod" : "POST",
@@ -1865,22 +1362,30 @@
          },
          {
             "actAsMethod" : "GET",
+            "name" : "OPTIONS"
+         },
+         {
+            "actAsMethod" : "GET",
             "name" : "GET"
+         },
+         {
+            "actAsMethod" : "GET",
+            "name" : "HEAD"
          }
       ],
-      "name" : "baseline-policy",
+      "name" : "baseline",
       "parameters" : [
          {
             "allowEmptyValue" : true,
             "allowRepeatedParameterName" : true,
             "attackSignaturesCheck" : true,
             "checkMaxValueLength" : false,
-            "checkMetachars" : false,
+            "checkMetachars" : true,
             "isBase64" : false,
             "isCookie" : false,
             "isHeader" : false,
             "level" : "global",
-            "metacharsOnParameterValueCheck" : false,
+            "metacharsOnParameterValueCheck" : true,
             "name" : "*",
             "parameterLocation" : "any",
             "performStaging" : false,
@@ -1888,20 +1393,6 @@
             "type" : "wildcard",
             "valueType" : "auto-detect",
             "wildcardOrder" : 1
-         },
-         {
-            "allowEmptyValue" : true,
-            "allowRepeatedParameterName" : false,
-            "isCookie" : false,
-            "isHeader" : false,
-            "level" : "global",
-            "mandatory" : false,
-            "name" : "__VIEWSTATE",
-            "parameterLocation" : "any",
-            "performStaging" : false,
-            "sensitiveParameter" : false,
-            "type" : "explicit",
-            "valueType" : "ignore"
          }
       ],
       "plain-text-profiles" : [
@@ -1918,55 +1409,16 @@
          }
       ],
       "policy-builder" : {
-         "enableFullPolicyInspection" : true,
-         "enableTrustedTrafficSiteChangeTracking" : true,
-         "enableUntrustedTrafficSiteChangeTracking" : true,
-         "inactiveEntityInactivityDurationInDays" : 90,
-         "learnFromResponses" : false,
-         "learnInactiveEntities" : true,
-         "learnOnlyFromNonBotTraffic" : true,
-         "learningMode" : "manual",
-         "responseStatusCodes" : [
-            "1xx",
-            "2xx",
-            "3xx"
-         ],
-         "trafficTighten" : {
-            "maxModificationSuggestionScore" : 50,
-            "minDaysBetweenSamples" : 1,
-            "totalRequests" : 15000
-         },
-         "trustAllIps" : false,
-         "trustedTrafficLoosen" : {
-            "differentSources" : 1,
-            "maxDaysBetweenSamples" : 7,
-            "minHoursBetweenSamples" : 0
-         },
-         "trustedTrafficSiteChangeTracking" : {
-            "differentSources" : 1,
-            "maxDaysBetweenSamples" : 7,
-            "minMinutesBetweenSamples" : 0
-         },
-         "untrustedTrafficLoosen" : {
-            "differentSources" : 20,
-            "maxDaysBetweenSamples" : 7,
-            "minHoursBetweenSamples" : 1
-         },
-         "untrustedTrafficSiteChangeTracking" : {
-            "differentSources" : 10,
-            "maxDaysBetweenSamples" : 7,
-            "minMinutesBetweenSamples" : 20
-         }
+         "learningMode" : "disabled"
       },
       "policy-builder-central-configuration" : {
          "buildingMode" : "local",
          "eventCorrelationMode" : "local"
       },
       "policy-builder-cookie" : {
-         "collapseCookieOccurrences" : 10,
-         "collapseCookiesIntoOneEntity" : true,
-         "enforceUnmodifiedCookies" : true,
-         "learnExplicitCookies" : "selective",
+         "collapseCookiesIntoOneEntity" : false,
+         "enforceUnmodifiedCookies" : false,
+         "learnExplicitCookies" : "never",
          "maximumCookies" : 100
       },
       "policy-builder-filetype" : {
@@ -2004,42 +1456,37 @@
       "policy-builder-url" : {
          "classifyUrls" : false,
          "classifyWebsocketUrls" : false,
-         "collapseUrlDepth" : 2,
-         "collapseUrlOccurrences" : 500,
-         "collapseUrlsIntoOneEntity" : true,
+         "collapseUrlsIntoOneEntity" : false,
          "learnExplicitUrls" : "never",
          "learnExplicitWebsocketUrls" : "never",
          "learnMethodsOnUrls" : false,
          "maximumUrls" : 10000,
          "maximumWebsocketUrls" : 100,
          "wildcardUrlFiletypes" : [
-            "bmp",
-            "gif",
-            "ico",
-            "jpeg",
-            "jpg",
-            "pcx",
             "pdf",
+            "ico",
+            "wav",
             "png",
+            "bmp",
+            "jpg",
+            "gif",
             "swf",
-            "wav"
+            "pcx",
+            "jpeg"
          ]
       },
-      "protocolIndependent" : false,
+      "protocolIndependent" : true,
       "redirection-protection" : {
          "redirectionProtectionEnabled" : false
       },
-      "redirection-protection-domains" : [
-         {
-            "domainName" : "*",
-            "type" : "wildcard",
-            "wildcardOrder" : 1
-         }
-      ],
       "response-pages" : [
          {
             "responseActionType" : "default",
             "responsePageType" : "graphql"
+         },
+         {
+            "responseActionType" : "default",
+            "responsePageType" : "persistent-flow"
          },
          {
             "ajaxActionType" : "alert-popup",
@@ -2070,10 +1517,6 @@
          {
             "responseActionType" : "default",
             "responsePageType" : "mobile"
-         },
-         {
-            "responseActionType" : "default",
-            "responsePageType" : "persistent-flow"
          },
          {
             "responseActionType" : "erase-cookies",
@@ -2116,18 +1559,24 @@
             "alarm" : true,
             "block" : true,
             "learn" : true,
-            "name" : "Generic Detection Signatures (High/Medium Accuracy)"
+            "name" : "High Accuracy Signatures"
+         },
+         {
+            "alarm" : true,
+            "block" : false,
+            "learn" : true,
+            "name" : "Medium Accuracy Signatures"
          }
       ],
       "signature-settings" : {
-         "attackSignatureFalsePositiveMode" : "disabled",
-         "minimumAccuracyForAutoAddedSignatures" : "medium",
+         "attackSignatureFalsePositiveMode" : "detect-and-allow",
+         "minimumAccuracyForAutoAddedSignatures" : "high",
          "placeSignaturesInStaging" : true,
-         "signatureStaging" : true
+         "signatureStaging" : false
       },
       "softwareVersion" : "16.1.0",
       "template" : {
-         "name" : "POLICY_TEMPLATE_RAPID_DEPLOYMENT"
+         "name" : "POLICY_TEMPLATE_MINIMAL_SECURITY"
       },
       "threat-campaign-settings" : {
          "threatCampaignEnforcementReadinessPeriod" : 1,
@@ -2186,116 +1635,26 @@
             ],
             "wildcardIncludesSlash" : true,
             "wildcardOrder" : 2
-         },
-         {
-            "attackSignaturesCheck" : true,
-            "clickjackingProtection" : false,
-            "description" : "",
-            "disallowFileUploadOfExecutables" : false,
-            "html5CrossOriginRequestsEnforcement" : {
-               "enforcementMode" : "disabled"
-            },
-            "isAllowed" : true,
-            "mandatoryBody" : false,
-            "metacharsOnUrlCheck" : false,
-            "method" : "*",
-            "methodsOverrideOnUrlCheck" : false,
-            "name" : "*",
-            "performStaging" : false,
-            "protocol" : "https",
-            "type" : "wildcard",
-            "urlContentProfiles" : [
-               {
-                  "headerName" : "*",
-                  "headerOrder" : "default",
-                  "headerValue" : "*",
-                  "type" : "apply-value-and-content-signatures"
-               },
-               {
-                  "headerName" : "Content-Type",
-                  "headerOrder" : "1",
-                  "headerValue" : "*form*",
-                  "type" : "form-data"
-               },
-               {
-                  "contentProfile" : {
-                     "name" : "Default"
-                  },
-                  "headerName" : "Content-Type",
-                  "headerOrder" : "2",
-                  "headerValue" : "*json*",
-                  "type" : "json"
-               },
-               {
-                  "contentProfile" : {
-                     "name" : "Default"
-                  },
-                  "headerName" : "Content-Type",
-                  "headerOrder" : "3",
-                  "headerValue" : "*xml*",
-                  "type" : "xml"
-               }
-            ],
-            "wildcardIncludesSlash" : true,
-            "wildcardOrder" : 1
          }
       ],
       "websocket-urls" : [
          {
-            "allowBinaryMessage" : true,
-            "allowJsonMessage" : true,
-            "allowTextMessage" : true,
-            "checkBinaryMessageMaxSize" : false,
             "checkMessageFrameMaxCount" : false,
             "checkMessageFrameMaxSize" : false,
-            "checkPayload" : true,
+            "checkPayload" : false,
             "description" : "",
             "html5CrossOriginRequestsEnforcement" : {
                "enforcementMode" : "disabled"
             },
             "isAllowed" : true,
-            "jsonProfile" : {
-               "name" : "Default"
-            },
             "metacharsOnWebsocketUrlCheck" : false,
             "name" : "*",
             "performStaging" : false,
-            "plainTextProfile" : {
-               "name" : "Default"
-            },
-            "protocol" : "wss",
-            "type" : "wildcard",
-            "unsupportedExtensions" : "remove",
-            "wildcardIncludesSlash" : true,
-            "wildcardOrder" : 2
-         },
-         {
-            "allowBinaryMessage" : true,
-            "allowJsonMessage" : true,
-            "allowTextMessage" : true,
-            "checkBinaryMessageMaxSize" : false,
-            "checkMessageFrameMaxCount" : false,
-            "checkMessageFrameMaxSize" : false,
-            "checkPayload" : true,
-            "description" : "",
-            "html5CrossOriginRequestsEnforcement" : {
-               "enforcementMode" : "disabled"
-            },
-            "isAllowed" : true,
-            "jsonProfile" : {
-               "name" : "Default"
-            },
-            "metacharsOnWebsocketUrlCheck" : false,
-            "name" : "*",
-            "performStaging" : false,
-            "plainTextProfile" : {
-               "name" : "Default"
-            },
             "protocol" : "ws",
             "type" : "wildcard",
             "unsupportedExtensions" : "remove",
             "wildcardIncludesSlash" : true,
-            "wildcardOrder" : 1
+            "wildcardOrder" : 2
          }
       ],
       "xml-profiles" : [
@@ -2308,12 +1667,12 @@
                "allowExternalReferences" : true,
                "allowProcessingInstructions" : true,
                "maximumAttributeValueLength" : "any",
-               "maximumAttributesPerElement" : "any",
-               "maximumChildrenPerElement" : "any",
-               "maximumDocumentDepth" : "any",
-               "maximumDocumentSize" : "any",
-               "maximumElements" : "any",
-               "maximumNSDeclarations" : "any",
+               "maximumAttributesPerElement" : 32,
+               "maximumChildrenPerElement" : 4096,
+               "maximumDocumentDepth" : 32,
+               "maximumDocumentSize" : 1024000,
+               "maximumElements" : 512000,
+               "maximumNSDeclarations" : 64,
                "maximumNameLength" : "any",
                "maximumNamespaceLength" : "any",
                "tolerateCloseTagShorthand" : true,
