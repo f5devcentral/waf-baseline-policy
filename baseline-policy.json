@@ -96,7 +96,7 @@
             },
             {
                "description" : "Bad host header value",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : true
             },
             {
