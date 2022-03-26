@@ -645,7 +645,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Null in multi-part parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
