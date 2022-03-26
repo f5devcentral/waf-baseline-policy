@@ -471,7 +471,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal HTTP status in response",
                "learn" : false,
                "name" : "VIOL_HTTP_RESPONSE_STATUS"
@@ -1211,10 +1211,14 @@
          "allowedResponseCodes" : [
             400,
             401,
+            403,
             404,
-            407,
-            417,
-            503
+            405,
+            429,
+            501,
+            502,
+            503,
+            504
          ],
          "enableEventCorrelation" : false,
          "enforcementReadinessPeriod" : 7,
@@ -1588,7 +1592,7 @@
             "attackSignaturesCheck" : true,
             "clickjackingProtection" : false,
             "description" : "",
-            "disallowFileUploadOfExecutables" : false,
+            "disallowFileUploadOfExecutables" : true,
             "html5CrossOriginRequestsEnforcement" : {
                "enforcementMode" : "disabled"
             },
