@@ -210,8 +210,8 @@
                "name" : "VIOL_ATTACK_SIGNATURE"
             },
             {
-               "alarm" : false,
-               "block" : false,
+               "alarm" : true,
+               "block" : true,
                "description" : "Disallowed file upload content detected in body",
                "name" : "VIOL_FILE_UPLOAD_IN_BODY"
             },
