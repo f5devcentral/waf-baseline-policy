@@ -582,7 +582,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal file type",
                "learn" : true,
                "name" : "VIOL_FILETYPE"
