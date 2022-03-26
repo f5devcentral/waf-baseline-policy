@@ -478,7 +478,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Modified ASM cookie",
                "learn" : true,
                "name" : "VIOL_ASM_COOKIE_MODIFIED"
