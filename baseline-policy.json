@@ -456,7 +456,7 @@
                "name" : "VIOL_GWT_MALFORMED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in header",
                "learn" : false,
@@ -672,21 +672,21 @@
                "name" : "VIOL_PARAMETER_REPEATED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in URL",
                "learn" : false,
                "name" : "VIOL_URL_METACHAR"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in parameter name",
                "learn" : false,
                "name" : "VIOL_PARAMETER_NAME_METACHAR"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in value",
                "learn" : false,
