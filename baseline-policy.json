@@ -603,7 +603,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal method",
                "learn" : false,
                "name" : "VIOL_METHOD"
