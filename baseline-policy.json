@@ -78,7 +78,7 @@
             },
             {
                "description" : "Directory traversals",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : true
             }
          ],
@@ -796,7 +796,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Evasion technique detected",
                "learn" : true,
                "name" : "VIOL_EVASION"
