@@ -546,7 +546,7 @@
                "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal parameter value length",
                "learn" : false,
@@ -637,7 +637,7 @@
                "name" : "VIOL_PARAMETER_EMPTY_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal POST data length",
                "learn" : false,
@@ -651,7 +651,7 @@
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal header length",
                "learn" : false,
@@ -713,28 +713,28 @@
                "name" : "VIOL_CSRF_EXPIRED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal URL length",
                "learn" : false,
                "name" : "VIOL_URL_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal cookie length",
                "learn" : false,
                "name" : "VIOL_COOKIE_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal request length",
                "learn" : false,
                "name" : "VIOL_REQUEST_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal query string length",
                "learn" : false,
@@ -810,7 +810,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Request length exceeds defined buffer size",
                "learn" : false,
                "name" : "VIOL_REQUEST_MAX_LENGTH"
