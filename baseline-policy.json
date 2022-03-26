@@ -665,7 +665,7 @@
                "name" : "VIOL_JSON_FORMAT"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal repeated parameter name",
                "learn" : false,
