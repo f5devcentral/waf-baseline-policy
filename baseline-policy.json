@@ -107,7 +107,7 @@
             },
             {
                "description" : "Unparsable request content",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "High ASCII characters in headers",
@@ -120,7 +120,7 @@
             },
             {
                "description" : "Bad HTTP version",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "Content length should be a positive number",
@@ -129,7 +129,7 @@
             },
             {
                "description" : "Host header contains IP address",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -1216,9 +1216,9 @@
             417,
             503
          ],
-         "enableEventCorrelation" : false,
-         "enforcementReadinessPeriod" : 7,
-         "maskCreditCardNumbersInRequest" : false,
+         "enableEventCorrelation" : true,
+         "enforcementReadinessPeriod" : 0,
+         "maskCreditCardNumbersInRequest" : true,
          "pathParameterHandling" : "as-parameters",
          "triggerAsmIruleEvent" : "disabled",
          "trustXff" : false,
@@ -1320,7 +1320,7 @@
          }
       ],
       "ip-intelligence" : {
-         "enabled" : false
+         "enabled" : true
       },
       "json-profiles" : [
          {
@@ -1409,7 +1409,45 @@
          }
       ],
       "policy-builder" : {
-         "learningMode" : "disabled"
+         "enableFullPolicyInspection" : true,
+         "enableTrustedTrafficSiteChangeTracking" : true,
+         "enableUntrustedTrafficSiteChangeTracking" : true,
+         "inactiveEntityInactivityDurationInDays" : 90,
+         "learnFromResponses" : false,
+         "learnInactiveEntities" : true,
+         "learnOnlyFromNonBotTraffic" : true,
+         "learningMode" : "manual",
+         "responseStatusCodes" : [
+            "1xx",
+            "2xx",
+            "3xx"
+         ],
+         "trafficTighten" : {
+            "maxModificationSuggestionScore" : 50,
+            "minDaysBetweenSamples" : 1,
+            "totalRequests" : 15000
+         },
+         "trustAllIps" : false,
+         "trustedTrafficLoosen" : {
+            "differentSources" : 1,
+            "maxDaysBetweenSamples" : 7,
+            "minHoursBetweenSamples" : 0
+         },
+         "trustedTrafficSiteChangeTracking" : {
+            "differentSources" : 1,
+            "maxDaysBetweenSamples" : 7,
+            "minMinutesBetweenSamples" : 0
+         },
+         "untrustedTrafficLoosen" : {
+            "differentSources" : 20,
+            "maxDaysBetweenSamples" : 7,
+            "minHoursBetweenSamples" : 1
+         },
+         "untrustedTrafficSiteChangeTracking" : {
+            "differentSources" : 10,
+            "maxDaysBetweenSamples" : 7,
+            "minMinutesBetweenSamples" : 20
+         }
       },
       "policy-builder-central-configuration" : {
          "buildingMode" : "local",
@@ -1570,8 +1608,8 @@
       ],
       "signature-settings" : {
          "attackSignatureFalsePositiveMode" : "detect-and-allow",
-         "minimumAccuracyForAutoAddedSignatures" : "high",
-         "placeSignaturesInStaging" : true,
+         "minimumAccuracyForAutoAddedSignatures" : "medium",
+         "placeSignaturesInStaging" : false,
          "signatureStaging" : false
       },
       "softwareVersion" : "16.1.0",
