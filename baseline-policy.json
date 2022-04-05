@@ -42,7 +42,7 @@
          "evasions" : [
             {
                "description" : "Bad unescape",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -78,7 +78,7 @@
             },
             {
                "description" : "Directory traversals",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             }
          ],
