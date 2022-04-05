@@ -1574,7 +1574,7 @@
       ],
       "signature-settings" : {
          "attackSignatureFalsePositiveMode" : "detect-and-allow",
-         "minimumAccuracyForAutoAddedSignatures" : "high",
+         "minimumAccuracyForAutoAddedSignatures" : "medium",
          "placeSignaturesInStaging" : true,
          "signatureStaging" : false
       },
