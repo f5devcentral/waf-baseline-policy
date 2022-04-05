@@ -107,7 +107,7 @@
             },
             {
                "description" : "Unparsable request content",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "High ASCII characters in headers",
@@ -120,7 +120,7 @@
             },
             {
                "description" : "Bad HTTP version",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "Content length should be a positive number",
