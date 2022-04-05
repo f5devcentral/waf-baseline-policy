@@ -1575,7 +1575,7 @@
       "signature-settings" : {
          "attackSignatureFalsePositiveMode" : "detect-and-allow",
          "minimumAccuracyForAutoAddedSignatures" : "medium",
-         "placeSignaturesInStaging" : true,
+         "placeSignaturesInStaging" : false,
          "signatureStaging" : false
       },
       "softwareVersion" : "16.1.0",
