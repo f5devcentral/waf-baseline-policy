@@ -659,7 +659,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "JSON data does not comply with format settings",
                "learn" : false,
                "name" : "VIOL_JSON_FORMAT"
