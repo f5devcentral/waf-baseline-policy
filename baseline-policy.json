@@ -47,27 +47,27 @@
             },
             {
                "description" : "Apache whitespace",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
                "description" : "Bare byte decoding",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : true
             },
             {
                "description" : "IIS Unicode codepoints",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
                "description" : "IIS backslashes",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
                "description" : "%u decoding",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -90,7 +90,7 @@
             },
             {
                "description" : "Check maximum number of parameters",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false,
                "maxParams" : 500
             },
@@ -101,7 +101,7 @@
             },
             {
                "description" : "Check maximum number of headers",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false,
                "maxHeaders" : 50
             },
@@ -111,7 +111,7 @@
             },
             {
                "description" : "High ASCII characters in headers",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -144,7 +144,7 @@
             },
             {
                "description" : "Bad multipart parameters parsing",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -154,12 +154,12 @@
             },
             {
                "description" : "Body in GET or HEAD requests",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
                "description" : "Chunked request with Content-Length header",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -180,21 +180,21 @@
          ],
          "violations" : [
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "GraphQL introspection query",
                "name" : "VIOL_GRAPHQL_INTROSPECTION_QUERY"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "GraphQL data does not comply with format settings",
                "learn" : true,
                "name" : "VIOL_GRAPHQL_FORMAT"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Malformed GraphQL data",
                "learn" : true,
                "name" : "VIOL_GRAPHQL_MALFORMED"
@@ -234,8 +234,8 @@
                "name" : "VIOL_RATING_THREAT"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Illegal repeated header",
                "learn" : false,
                "name" : "VIOL_HEADER_REPEATED"
@@ -247,8 +247,8 @@
                "name" : "VIOL_MANDATORY_REQUEST_BODY"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Bad Actor Convicted",
                "name" : "VIOL_CONVICTION"
             },
@@ -265,20 +265,20 @@
                "name" : "VIOL_HOSTNAME"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Leaked Credentials Detection",
                "name" : "VIOL_LEAKED_CREDENTIALS"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Mitigation action determined by Threat Analysis Platform",
                "name" : "VIOL_THREAT_ANALYSIS"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Blocking Condition Detected",
                "name" : "VIOL_BLOCKING_CONDITION"
             },
@@ -429,7 +429,7 @@
                "name" : "VIOL_GWT_FORMAT"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal Base64 value",
                "learn" : false,
@@ -491,8 +491,8 @@
                "name" : "VIOL_COOKIE_MODIFIED"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Cookie not RFC-compliant",
                "learn" : true,
                "name" : "VIOL_COOKIE_MALFORMED"
@@ -658,8 +658,8 @@
                "name" : "VIOL_HEADER_LENGTH"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "JSON data does not comply with format settings",
                "learn" : false,
                "name" : "VIOL_JSON_FORMAT"
@@ -782,7 +782,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "XML data does not comply with format settings",
                "learn" : false,
                "name" : "VIOL_XML_FORMAT"
@@ -1567,7 +1567,7 @@
          },
          {
             "alarm" : true,
-            "block" : false,
+            "block" : true,
             "learn" : true,
             "name" : "Medium Accuracy Signatures"
          }
