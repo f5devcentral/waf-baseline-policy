@@ -78,7 +78,7 @@
             },
             {
                "description" : "Directory traversals",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : true
             }
          ],
@@ -149,7 +149,7 @@
             },
             {
                "description" : "Bad multipart/form-data request parsing",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : false
             },
             {
@@ -169,7 +169,7 @@
             },
             {
                "description" : "Header name with no header value",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -210,8 +210,8 @@
                "name" : "VIOL_ATTACK_SIGNATURE"
             },
             {
-               "alarm" : false,
-               "block" : false,
+               "alarm" : true,
+               "block" : true,
                "description" : "Disallowed file upload content detected in body",
                "name" : "VIOL_FILE_UPLOAD_IN_BODY"
             },
@@ -456,7 +456,7 @@
                "name" : "VIOL_GWT_MALFORMED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in header",
                "learn" : false,
@@ -471,14 +471,14 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal HTTP status in response",
                "learn" : false,
                "name" : "VIOL_HTTP_RESPONSE_STATUS"
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Modified ASM cookie",
                "learn" : true,
                "name" : "VIOL_ASM_COOKIE_MODIFIED"
@@ -546,7 +546,7 @@
                "name" : "VIOL_PARAMETER_DYNAMIC_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal parameter value length",
                "learn" : false,
@@ -582,7 +582,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal file type",
                "learn" : true,
                "name" : "VIOL_FILETYPE"
@@ -603,7 +603,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Illegal method",
                "learn" : false,
                "name" : "VIOL_METHOD"
@@ -637,7 +637,7 @@
                "name" : "VIOL_PARAMETER_EMPTY_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal POST data length",
                "learn" : false,
@@ -645,13 +645,13 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Null in multi-part parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal header length",
                "learn" : false,
@@ -665,28 +665,28 @@
                "name" : "VIOL_JSON_FORMAT"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal repeated parameter name",
                "learn" : false,
                "name" : "VIOL_PARAMETER_REPEATED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in URL",
                "learn" : false,
                "name" : "VIOL_URL_METACHAR"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in parameter name",
                "learn" : false,
                "name" : "VIOL_PARAMETER_NAME_METACHAR"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal meta character in value",
                "learn" : false,
@@ -713,28 +713,28 @@
                "name" : "VIOL_CSRF_EXPIRED"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal URL length",
                "learn" : false,
                "name" : "VIOL_URL_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal cookie length",
                "learn" : false,
                "name" : "VIOL_COOKIE_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal request length",
                "learn" : false,
                "name" : "VIOL_REQUEST_LENGTH"
             },
             {
-               "alarm" : true,
+               "alarm" : false,
                "block" : false,
                "description" : "Illegal query string length",
                "learn" : false,
@@ -749,7 +749,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "HTTP protocol compliance failed",
                "learn" : true,
                "name" : "VIOL_HTTP_PROTOCOL"
@@ -796,7 +796,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Evasion technique detected",
                "learn" : true,
                "name" : "VIOL_EVASION"
@@ -810,7 +810,7 @@
             },
             {
                "alarm" : true,
-               "block" : false,
+               "block" : true,
                "description" : "Request length exceeds defined buffer size",
                "learn" : false,
                "name" : "VIOL_REQUEST_MAX_LENGTH"
@@ -1211,10 +1211,14 @@
          "allowedResponseCodes" : [
             400,
             401,
+            403,
             404,
-            407,
-            417,
-            503
+            405,
+            429,
+            501,
+            502,
+            503,
+            504
          ],
          "enableEventCorrelation" : false,
          "enforcementReadinessPeriod" : 7,
@@ -1588,7 +1592,7 @@
             "attackSignaturesCheck" : true,
             "clickjackingProtection" : false,
             "description" : "",
-            "disallowFileUploadOfExecutables" : false,
+            "disallowFileUploadOfExecutables" : true,
             "html5CrossOriginRequestsEnforcement" : {
                "enforcementMode" : "disabled"
             },
