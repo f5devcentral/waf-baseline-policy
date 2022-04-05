@@ -180,21 +180,21 @@
          ],
          "violations" : [
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "GraphQL introspection query",
                "name" : "VIOL_GRAPHQL_INTROSPECTION_QUERY"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "GraphQL data does not comply with format settings",
                "learn" : true,
                "name" : "VIOL_GRAPHQL_FORMAT"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Malformed GraphQL data",
                "learn" : true,
                "name" : "VIOL_GRAPHQL_MALFORMED"
