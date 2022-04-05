@@ -42,7 +42,7 @@
          "evasions" : [
             {
                "description" : "Bad unescape",
-               "enabled" : true,
+               "enabled" : false,
                "learn" : false
             },
             {
@@ -74,11 +74,11 @@
                "description" : "Multiple decoding",
                "enabled" : true,
                "learn" : true,
-               "maxDecodingPasses" : 3
+               "maxDecodingPasses" : 4
             },
             {
                "description" : "Directory traversals",
-               "enabled" : false,
+               "enabled" : true,
                "learn" : true
             }
          ],
@@ -107,7 +107,7 @@
             },
             {
                "description" : "Unparsable request content",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "High ASCII characters in headers",
@@ -120,7 +120,7 @@
             },
             {
                "description" : "Bad HTTP version",
-               "enabled" : false
+               "enabled" : true
             },
             {
                "description" : "Content length should be a positive number",
@@ -644,8 +644,8 @@
                "name" : "VIOL_POST_DATA_LENGTH"
             },
             {
-               "alarm" : true,
-               "block" : true,
+               "alarm" : false,
+               "block" : false,
                "description" : "Null in multi-part parameter value",
                "learn" : false,
                "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
@@ -1574,8 +1574,8 @@
       ],
       "signature-settings" : {
          "attackSignatureFalsePositiveMode" : "detect-and-allow",
-         "minimumAccuracyForAutoAddedSignatures" : "high",
-         "placeSignaturesInStaging" : true,
+         "minimumAccuracyForAutoAddedSignatures" : "medium",
+         "placeSignaturesInStaging" : false,
          "signatureStaging" : false
       },
       "softwareVersion" : "16.1.0",
